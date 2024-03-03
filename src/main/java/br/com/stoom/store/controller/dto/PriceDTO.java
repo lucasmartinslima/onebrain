@@ -1,0 +1,26 @@
+package br.com.stoom.store.controller.dto;
+
+import br.com.stoom.store.model.Price;
+
+public class PriceDTO {
+
+    private Double price;
+
+    private Integer quantity;
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
+}
