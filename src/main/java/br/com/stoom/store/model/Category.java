@@ -28,6 +28,10 @@ public class Category {
         this.active = active;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public Long getId() {
         return id;
     }

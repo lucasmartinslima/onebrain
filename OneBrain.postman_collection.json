@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "184ec141-2d94-4b0b-a287-411c752c640e",
+		"_postman_id": "61754d41-5238-41a0-b059-69c38a698600",
 		"name": "OneBrain",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "24492000"
@@ -101,7 +101,7 @@
 					}
 				],
 				"url": {
-					"raw": "{{baseURL1}}/api/v1/products",
+					"raw": "{{baseURL1}}/api/v1/products?name=SKOL&category=BEBIDA&brand=AMBEV",
 					"host": [
 						"{{baseURL1}}"
 					],
@@ -109,6 +109,20 @@
 						"api",
 						"v1",
 						"products"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "SKOL"
+						},
+						{
+							"key": "category",
+							"value": "BEBIDA"
+						},
+						{
+							"key": "brand",
+							"value": "AMBEV"
+						}
 					]
 				}
 			},
