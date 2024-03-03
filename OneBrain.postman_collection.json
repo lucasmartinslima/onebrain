@@ -1,0 +1,992 @@
+{
+	"info": {
+		"_postman_id": "184ec141-2d94-4b0b-a287-411c752c640e",
+		"name": "OneBrain",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24492000"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/api/v1/products",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "User-Agent",
+						"value": "insomnia/8.6.0"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"sku\": \"000000000000934536-UN\",\r\n\t\"name\": \"salgadinho\",\r\n\t\"description\": \"Molho para temperar lanches, salgados e diversas receitas, não pode faltar na sua casa ou estabelecimento comercial.\",\r\n\t\"brandId\": 1,\r\n\t\"prices\": [\r\n\t\t{\r\n\t\t\t\"quantity\":1,\r\n\t\t\t\"price\": 2.0\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"quantity\": 6,\r\n\t\t\t\"price\": 1.90\r\n\t\t}\r\n\t],\r\n\t\"categories\": [\r\n\t\t{\"id\": 1}\r\n\t]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL1}}/api/v1/products",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"products"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "created / 201",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "User-Agent",
+								"value": "insomnia/8.6.0"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/api/v1/products",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"products"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 03 Mar 2024 00:35:26 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"id\": 1,\n \"sku\": \"000000000000934536-UN\",\n \"name\": \"SALGADINHO\",\n \"description\": \"Molho para temperar lanches, salgados e diversas receitas, não pode faltar na sua casa ou estabelecimento comercial.\",\n \"prices\": [\n  {\n   \"price\": 2,\n   \"quantity\": 1\n  },\n  {\n   \"price\": 1.9,\n   \"quantity\": 6\n  }\n ],\n \"categories\": [\n  \"COMIDA\"\n ],\n \"brand\": \"PREDILECTA\",\n \"active\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "localhost:8080/api/v1/products",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": "insomnia/8.6.0"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL1}}/api/v1/products",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"products"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "insomnia/8.6.0"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/api/v1/products",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"products"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 03 Mar 2024 00:09:56 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n {\n  \"id\": 1,\n  \"sku\": \"000000000000934536-UN\",\n  \"name\": \"SALGADINHO\",\n  \"description\": \"Molho para temperar lanches, salgados e diversas receitas, não pode faltar na sua casa ou estabelecimento comercial.\",\n  \"prices\": [\n   {\n    \"price\": 2,\n    \"quantity\": 1\n   },\n   {\n    \"price\": 1.9,\n    \"quantity\": 6\n   }\n  ],\n  \"categories\": [\n   \"COMIDA\"\n  ],\n  \"brand\": \"PREDILECTA\",\n  \"active\": true\n }\n]"
+				}
+			]
+		},
+		{
+			"name": "localhost:8080/api/v1/products/1/changeActive",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": "insomnia/8.6.1"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL1}}/api/v1/products/1/changeActive",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"1",
+						"changeActive"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "insomnia/8.6.1"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/api/v1/products/1/changeActive",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"1",
+								"changeActive"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 02 Mar 2024 17:00:29 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"id\": 1,\n \"sku\": \"000000000000934536-UN\",\n \"name\": \"SALGADINHO9\",\n \"description\": \"Molho para temperar lanches, salgados e diversas receitas, não pode faltar na sua casa ou estabelecimento comercial.\",\n \"prices\": [\n  {\n   \"price\": 2,\n   \"quantity\": 1\n  },\n  {\n   \"price\": 1.9,\n   \"quantity\": 6\n  }\n ],\n \"categories\": [\n  \"COMIDA\"\n ],\n \"brand\": \"PREDILECTA\",\n \"active\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "localhost:8080/api/v1/products/1",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "User-Agent",
+						"value": "insomnia/8.6.1"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n\t\"sku\": \"000000000000934536-UN\",\r\n\t\"name\": \"SALGADINHO9\",\r\n\t\"description\": \"Molho para temperar lanches, salgados e diversas receitas, não pode faltar na sua casa ou estabelecimento comercial.\",\r\n\t\"prices\": [\r\n\t\t{\r\n\t\t\t\"price\": 2.0,\r\n\t\t\t\"quantity\": 1\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"price\": 1.9,\r\n\t\t\t\"quantity\": 6\r\n\t\t}\r\n\t],\r\n\t\t\"categories\": [\r\n\t\t{\"id\": 1}\r\n\t],\r\n\t\"brandId\": 1,\r\n\t\"active\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL1}}/api/v1/products/1",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "User-Agent",
+								"value": "insomnia/8.6.1"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/api/v1/products/1",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 02 Mar 2024 17:00:17 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"id\": 1,\n \"sku\": \"000000000000934536-UN\",\n \"name\": \"SALGADINHO9\",\n \"description\": \"Molho para temperar lanches, salgados e diversas receitas, não pode faltar na sua casa ou estabelecimento comercial.\",\n \"prices\": [\n  {\n   \"price\": 2,\n   \"quantity\": 1\n  },\n  {\n   \"price\": 1.9,\n   \"quantity\": 6\n  }\n ],\n \"categories\": [\n  \"COMIDA\"\n ],\n \"brand\": \"PREDILECTA\",\n \"active\": false\n}"
+				}
+			]
+		},
+		{
+			"name": "localhost:8080/api/v1/categories",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "User-Agent",
+						"value": "insomnia/8.6.0"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"name\": \"comida\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL1}}/api/v1/categories",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"categories"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "User-Agent",
+								"value": "insomnia/8.6.0"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/api/v1/categories",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"categories"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 03 Mar 2024 00:35:24 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"id\": 1,\n \"name\": \"COMIDA\",\n \"active\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "localhost:8080/api/v1/categories",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": "insomnia/8.6.0"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL1}}/api/v1/categories",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"categories"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "insomnia/8.6.0"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/api/v1/categories",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"categories"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 02 Mar 2024 17:08:42 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[]"
+				}
+			]
+		},
+		{
+			"name": "localhost:8080/api/v1/categories/inactive",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": "insomnia/8.6.1"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL1}}/api/v1/categories/inactive",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"categories",
+						"inactive"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "insomnia/8.6.1"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/api/v1/categories/inactive",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"categories",
+								"inactive"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 02 Mar 2024 17:08:40 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n {\n  \"id\": 1,\n  \"name\": \"COMIDA\",\n  \"active\": false\n }\n]"
+				}
+			]
+		},
+		{
+			"name": "localhost:8080/api/v1/categories/1/changeActive",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": "insomnia/8.6.1"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL1}}/api/v1/categories/1/changeActive",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"categories",
+						"1",
+						"changeActive"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "insomnia/8.6.1"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/api/v1/categories/1/changeActive",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"categories",
+								"1",
+								"changeActive"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 02 Mar 2024 17:08:38 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"id\": 1,\n \"name\": \"COMIDA\",\n \"active\": false\n}"
+				}
+			]
+		},
+		{
+			"name": "localhost:8080/api/v1/categories/1",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "User-Agent",
+						"value": "insomnia/8.6.1"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"name\": \"BEBIDA\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL1}}/api/v1/categories/1",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"categories",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "User-Agent",
+								"value": "insomnia/8.6.1"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/api/v1/categories/1",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"categories",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 02 Mar 2024 17:04:21 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"id\": 1,\n \"name\": \"TGEO\",\n \"active\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "localhost:8080/api/v1/brands",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "User-Agent",
+						"value": "insomnia/8.6.0"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"name\": \"predilecta\",\r\n\t\"description\": \"Em parceria com mais de 350 produtores dedicados, cuidamos com carinho de cada campo para assegurar a excelência e a qualidade dos ingredientes que selecionamos. Nosso propósito é claro: entregar sempre o melhor para a mesa de nossos consumidores. Porque para nós, o coração está no campo, e é de lá que trazemos o amor para a sua mesa.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL1}}/api/v1/brands",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"brands"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "User-Agent",
+								"value": "insomnia/8.6.0"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/api/v1/brands",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"brands"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 03 Mar 2024 00:35:23 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"id\": 1,\n \"name\": \"PREDILECTA\",\n \"description\": \"Em parceria com mais de 350 produtores dedicados, cuidamos com carinho de cada campo para assegurar a excelência e a qualidade dos ingredientes que selecionamos. Nosso propósito é claro: entregar sempre o melhor para a mesa de nossos consumidores. Porque para nós, o coração está no campo, e é de lá que trazemos o amor para a sua mesa.\",\n \"active\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "localhost:8080/api/v1/brands",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": "insomnia/8.6.1"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL1}}/api/v1/brands",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"brands"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "insomnia/8.6.1"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/api/v1/brands",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"brands"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 02 Mar 2024 18:02:26 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[]"
+				}
+			]
+		},
+		{
+			"name": "localhost:8080/api/v1/brands/inactive",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": "insomnia/8.6.1"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL1}}/api/v1/brands/inactive",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"brands",
+						"inactive"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "insomnia/8.6.1"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/api/v1/brands/inactive",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"brands",
+								"inactive"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 02 Mar 2024 18:02:28 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n {\n  \"id\": 1,\n  \"name\": \"PREDILECTA\",\n  \"description\": \"Em parceria com mais de 350 produtores dedicados, cuidamos com carinho de cada campo para assegurar a excelência e a qualidade dos ingredientes que selecionamos. Nosso propósito é claro: entregar sempre o melhor para a mesa de nossos consumidores. Porque para nós, o coração está no campo, e é de lá que trazemos o amor para a sua mesa.\",\n  \"active\": false\n }\n]"
+				}
+			]
+		},
+		{
+			"name": "localhost:8080/api/v1/brands/1/changeActive",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": "insomnia/8.6.1"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL1}}/api/v1/brands/1/changeActive",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"brands",
+						"1",
+						"changeActive"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "insomnia/8.6.1"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/api/v1/brands/1/changeActive",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"brands",
+								"1",
+								"changeActive"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 02 Mar 2024 18:02:24 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"id\": 1,\n \"name\": \"PREDILECTA\",\n \"description\": \"Em parceria com mais de 350 produtores dedicados, cuidamos com carinho de cada campo para assegurar a excelência e a qualidade dos ingredientes que selecionamos. Nosso propósito é claro: entregar sempre o melhor para a mesa de nossos consumidores. Porque para nós, o coração está no campo, e é de lá que trazemos o amor para a sua mesa.\",\n \"active\": false\n}"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL1",
+			"value": "localhost:8080"
+		}
+	]
+}
